@@ -10,7 +10,7 @@ connection = sqlite3.connect("./tutorial.db")
 cursor = connection.cursor()
 
 # Create a 'movie' table
-cursor.execute("DROP TABLE movie")
+cursor.execute("DROP TABLE IF EXISTS movie")
 cursor.execute("CREATE TABLE movie(title, year, score)")
 
 # Select the 'movie' database
