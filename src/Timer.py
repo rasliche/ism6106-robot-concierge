@@ -1,21 +1,31 @@
 from time import time
-now = time()
+from math import floor
 
-print(time()-now)
+# now = time()
+# print(time()-now)
 
+"""
+Timer class is used to document how long a visitor
+is within the detection range of an exhibit. It is
+triggered by a sensor.
+"""
 class Timer():
     def __init__(self) -> None:
-        pass
+        self._startTime = None
+        self._endTime = None
 
     def start(self):
-        pass
+        self._startTime = time()
+        print("Timer started")
 
     def stop(self):
-        pass
+        self._endTime = time()
+        print("Timer stopped")
 
     def report(self):
-        pass
+        return floor(self._endTime - self._startTime)
 
     def reset(self):
-        pass
+        self._endTime = None
+        self._startTime = None
 
